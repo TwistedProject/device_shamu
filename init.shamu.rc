@@ -17,6 +17,9 @@
 import init.shamu.usb.rc
 import init.shamu.power.rc
 import init.shamu.diag.rc
+import init.fk.rc
+import init.performance_profiles.rc
+import init.supolicy.sh
 
 on early-init
     mkdir /firmware 0771 system system
@@ -534,10 +537,12 @@ service qseecomd /system/bin/qseecomd
    user root
    group root
 
-service mpdecision /system/bin/mpdecision --avg_comp
-   class main
-   user root
-   writepid /dev/cpuset/system-background/tasks
+#service mpdecision /system/bin/mpdecision --avg_comp
+#   class main
+#   user root
+#   group root readproc
+#   writepid /dev/cpuset/system-background/tasks
+#   disabled
 
 service ss_ramdump /system/bin/subsystem_ramdump
     class main
