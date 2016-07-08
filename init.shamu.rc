@@ -19,7 +19,6 @@ import init.shamu.power.rc
 import init.shamu.diag.rc
 import init.fk.rc
 import init.performance_profiles.rc
-import init.supolicy.sh
 
 on early-init
     mkdir /firmware 0771 system system
