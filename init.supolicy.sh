@@ -18,4 +18,5 @@ $SUPOLICY --live \
 	"allow platform_app { untrusted_app init system_app shell kernel ueventd logd vold healthd lmkd servicemanager surfaceflinger tee adbd netd debuggerd rild drmserver mediaserver installd keystore qmux netmgrd ims zygote gatekeeperd camera atfwd cnd fingerprintd system_server sdcardd wpa nfc radio isolated_app mdm_helper sensors adspd thermald bridge time dex2oat } dir search" \
         "allow platform_app { untrusted_app init system_app shell kernel ueventd logd vold healthd lmkd servicemanager surfaceflinger tee adbd netd debuggerd rild drmserver mediaserver installd keystore qmux netmgrd ims zygote gatekeeperd camera atfwd cnd fingerprintd system_server sdcardd wpa nfc radio isolated_app mdm_helper sensors adspd thermald bridge time dex2oat } file { open read getattr }" \
 	"allow shell shell capability dac_override" \
-	"allow dalvikcache_data_file shell file unlink"
+	"allow dalvikcache_data_file shell file unlink" \
+	"allow system_server system_server unix_stream_socket ioctl"
